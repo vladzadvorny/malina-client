@@ -14,5 +14,53 @@
 
   .container {
     height: $footerHeight;
+
+    .menu {
+      display: flex;
+      list-style: none;
+      justify-content: space-between;
+      flex: 1;
+
+      li {
+        flex: 1;
+        display: flex;
+
+        a {
+          flex: 1;
+          display: flex;
+          height: $footerHeight;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          transition: background-color 0.4s ease;
+
+          @media not all and (pointer: coarse) {
+            &:hover {
+              background-color: lighten($secondaryColor, 43);
+              text-decoration: none;
+
+              svg {
+                font-size: 1.6em;
+              }
+            }
+          }
+
+          svg {
+            font-size: 1.4em;
+            color: lighten($secondaryColor, 1);
+          }
+
+          &:active,
+          &.active {
+            text-decoration: none;
+
+            svg {
+              font-size: 1.6em;
+              color: $secondaryColor;
+            }
+          }
+        }
+      }
+    }
   }
 }
