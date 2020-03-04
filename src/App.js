@@ -7,7 +7,7 @@ import './App.scss'
 import { connect } from './store'
 import { isCordova } from './constants/config'
 
-import Hot from './pages/Hot'
+import Feed from './pages/Feed'
 
 const App = ({ route, increment }) => {
   const history = isCordova ? createHashHistory() : null
@@ -20,7 +20,7 @@ const App = ({ route, increment }) => {
 
   return (
     <Router url={route} history={history}>
-      <Hot path="/" />
+      <Feed path="/" />
     </Router>
   )
 }

@@ -8,9 +8,10 @@
   padding-top: $headerHeight;
 
   .container {
-    border: 1px solid lightpink;
+    // border: 1px solid lighten($secondaryColor, 43);
     border-top: 0;
     border-bottom: 0;
     flex: 1;
+    flex-direction: column;
   }
 }
