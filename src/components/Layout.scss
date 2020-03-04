@@ -1,0 +1,16 @@
+@import '../constants/globals';
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 100%;
+  padding-top: $headerHeight;
+
+  .container {
+    border: 1px solid lightpink;
+    border-top: 0;
+    border-bottom: 0;
+    flex: 1;
+  }
+}

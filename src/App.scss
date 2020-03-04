@@ -1,0 +1,26 @@
+@import './constants/globals';
+
+@import './scss/reset';
+@import './scss/container';
+@import './scss/links';
+
+html {
+  min-height: 100%;
+  font-size: 1em;
+}
+
+body {
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: $blackColor;
+  background-color: lighten($blackColor, 79);
+}
+
+html,
+body,
+#root {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}

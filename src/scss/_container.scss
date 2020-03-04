@@ -1,0 +1,18 @@
+.container {
+  align-self: center;
+  display: flex;
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {
+  .container {
+    min-width: 100%;
+  }
+}

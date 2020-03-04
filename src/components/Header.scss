@@ -1,0 +1,23 @@
+@import '../constants/globals';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+  background-color: $primaryColor;
+  height: $headerHeight;
+  box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.1);
+
+  .container {
+    padding: 0 $freeSpace 0 $freeSpace;
+    color: $whiteColor;
+    height: $headerHeight;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

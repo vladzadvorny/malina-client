@@ -1,17 +1,17 @@
 /* eslint-disable prefer-destructuring */
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require('webpack');
-const path = require('path');
-const merge = require('webpack-merge');
-const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack')
+const path = require('path')
+const merge = require('webpack-merge')
+const TerserPlugin = require('terser-webpack-plugin')
 // const CompressionPlugin = require('compression-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
-const baseConfig = require('./webpack.base');
+  .BundleAnalyzerPlugin
+const baseConfig = require('./webpack.base')
 
 const config = {
   mode: 'production',
@@ -85,6 +85,6 @@ const config = {
       }
     })
   ]
-};
+}
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(baseConfig, config)

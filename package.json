@@ -8,13 +8,16 @@
     "start": "node ./dist-ssr/server.js",
     "dev": "webpack-dev-server --config ./webpack.dev.js --mode development",
     "build:cordova": "webpack -p --config webpack.cordova.js --mode production",
-    "build:ssr": "webpack -p --config webpack.client.js --mode production && webpack -p --config webpack.server.js --mode production"
+    "build:ssr": "webpack -p --config webpack.client.js --mode production && webpack -p --config webpack.server.js --mode production",
+    "serve": "serve ./dist-cordova"
   },
   "dependencies": {
     "express": "^4.17.1",
+    "history": "^4.10.1",
     "node-fetch": "^2.6.0",
     "preact": "^10.3.3",
     "preact-render-to-string": "^5.1.4",
+    "preact-router": "^3.2.1",
     "serialize-javascript": "^3.0.0",
     "unistore": "^3.5.1"
   },
@@ -50,6 +53,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
+    "serve": "^11.3.0",
     "style-loader": "^1.1.3",
     "webpack": "^4.42.0",
     "webpack-bundle-analyzer": "^3.6.0",

@@ -1,9 +1,9 @@
 /* eslint-disable import/no-extraneous-dependencies */
-const webpack = require('webpack');
-const merge = require('webpack-merge');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const path = require('path');
-const baseConfig = require('./webpack.base');
+const webpack = require('webpack')
+const merge = require('webpack-merge')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const path = require('path')
+const baseConfig = require('./webpack.base')
 
 const config = {
   mode: 'development',
@@ -51,6 +51,6 @@ const config = {
     historyApiFallback: true
   },
   devtool: 'inline-source-map'
-};
+}
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(baseConfig, config)
