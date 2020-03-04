@@ -36,18 +36,18 @@
 
           @media not all and (pointer: coarse) {
             &:hover {
-              background-color: lighten($secondaryColor, 43);
+              background-color: lighten($secondaryColor, 38);
               text-decoration: none;
 
-              svg {
-                font-size: 1.6em;
-              }
+              // svg {
+              //   font-size: 1.6em;
+              // }
             }
           }
 
           svg {
             font-size: 1.4em;
-            color: lighten($secondaryColor, 1);
+            color: lighten($secondaryColor, 8);
           }
 
           &:active,

@@ -8,6 +8,8 @@ import { connect } from './store'
 import { isCordova } from './constants/config'
 
 import Feed from './pages/Feed'
+import Find from './pages/Find'
+import ChatList from './pages/ChatList'
 
 const App = ({ route, increment }) => {
   const history = isCordova ? createHashHistory() : null
@@ -21,6 +23,8 @@ const App = ({ route, increment }) => {
   return (
     <Router url={route} history={history}>
       <Feed path="/" />
+      <Find path="/find" />
+      <ChatList path="/chat-list" />
     </Router>
   )
 }
