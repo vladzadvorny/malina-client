@@ -9,11 +9,47 @@
   flex-direction: column;
   position: relative;
 
+  // post
+  .top {
+    padding: $freeSpace;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 1.3em;
+
+      a {
+        color: $blackColor;
+        transition: color 0.4s ease;
+
+        &:hover {
+          text-decoration: none;
+          color: $secondaryColor;
+        }
+      }
+    }
+
+    .meta {
+      font-size: 0.9em;
+
+      .author {
+      }
+
+      .time {
+        margin-left: 5px;
+        color: lighten($blackColor, 58);
+        font-style: italic;
+      }
+    }
+  }
+
+  // body
   .body {
     flex: 1;
     padding: $freeSpace;
   }
 
+  // borrom
   .bottom {
     padding: $freeSpace;
     display: flex;

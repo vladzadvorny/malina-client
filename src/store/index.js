@@ -10,7 +10,8 @@ export const connect = mapStateToProps => WrappedComponent => {
 
 export default (state = {}) => {
   const initialState = {
-    count: 0
+    count: 0,
+    me: {}
   }
 
   return process.env.NODE_ENV === 'production'

@@ -19,6 +19,20 @@ const Post = () => {
 
   return (
     <div className="post">
+      {/* top */}
+      <div className="top">
+        <h2>
+          <a href="/">Какой-нибудь заголовок поста</a>
+        </h2>
+        <span className="meta">
+          <a href="/" className="author">
+            Автор
+          </a>
+          <span className="time">10 минут назад</span>
+        </span>
+      </div>
+
+      {/* body */}
       <div className="body">.</div>
 
       <div className="bottom">
@@ -34,7 +48,6 @@ const Post = () => {
         </div>
 
         {/* tags */}
-
         <ul className="tags">
           {arr.map(item => (
             <li key={item}>{item}</li>
