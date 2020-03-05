@@ -5,5 +5,175 @@
   min-height: 300px;
   margin-bottom: $freeSpace;
   box-shadow: 0px 0px 6px 0px rgba(77, 44, 44, 0.1);
-  padding: $freeSpace;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  .body {
+    flex: 1;
+    padding: $freeSpace;
+  }
+
+  .bottom {
+    padding: $freeSpace;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // rating
+    .rating {
+      display: flex;
+      align-items: center;
+
+      .up,
+      .down {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 26px;
+        cursor: pointer;
+        border-radius: $borderRadius;
+        transition: background-color 0.4s ease, color 0.4s ease;
+
+        svg {
+          margin-left: -1px;
+          font-size: 1.1em;
+        }
+      }
+
+      .up {
+        border: 1px solid $primaryColor;
+        background-color: lighten($primaryColor, 44);
+
+        svg {
+          color: $primaryColor;
+        }
+
+        @media not all and (pointer: coarse) {
+          &:hover {
+            background-color: $primaryColor;
+
+            svg {
+              color: $whiteColor;
+            }
+          }
+        }
+      }
+
+      .down {
+        border: 1px solid $secondaryColor;
+        background-color: lighten($secondaryColor, 31);
+
+        svg {
+          color: $secondaryColor;
+        }
+
+        @media not all and (pointer: coarse) {
+          &:hover {
+            background-color: $secondaryColor;
+
+            svg {
+              color: $whiteColor;
+            }
+          }
+        }
+      }
+
+      .count {
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 1em;
+      }
+    }
+
+    // tags
+    .tags {
+      display: flex;
+      flex-direction: row;
+      list-style: none;
+      flex-grow: 1;
+      flex-wrap: wrap;
+      height: 26px;
+      overflow: hidden;
+      padding-left: $freeSpace;
+      padding-right: $freeSpace;
+      justify-content: center;
+
+      li {
+        height: 26px;
+        margin-right: 5px;
+        border: 1px solid lighten($blackColor, 58);
+        background-color: lighten($blackColor, 79);
+        font-size: 0.8em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 5px;
+        padding-right: 5px;
+        color: lighten($blackColor, 58);
+        cursor: pointer;
+        border-radius: $borderRadius;
+        transition: background-color 0.4s ease, color 0.4s ease;
+
+        @media not all and (pointer: coarse) {
+          &:hover {
+            background-color: lighten($blackColor, 74);
+          }
+        }
+      }
+    }
+
+    // comment-count
+    .comment-count {
+      height: 26px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: $borderRadius;
+      border: 1px solid $primaryColor;
+      background-color: lighten($primaryColor, 44);
+      padding-left: 7px;
+      padding-right: $freeSpace + 2;
+      transition: background-color 0.4s ease, color 0.4s ease;
+
+      svg {
+        color: $primaryColor;
+        font-size: 1em;
+      }
+
+      .count {
+        margin-left: 3px;
+        font-size: 0.9em;
+      }
+
+      @media not all and (pointer: coarse) {
+        &:hover {
+          background-color: $primaryColor;
+
+          svg,
+          .count {
+            color: $whiteColor;
+          }
+        }
+      }
+    }
+  }
+
+  /* Landscape phones and portrait tablets */
+  @media (max-width: 767px) {
+    .bottom {
+      flex-wrap: wrap;
+
+      .tags {
+        order: -1;
+        margin-bottom: $freeSpace;
+        justify-content: space-between;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: -5px;
+      }
+    }
+  }
 }
