@@ -1,8 +1,8 @@
 @import '../constants/globals';
 
 .fab {
-  height: 55px;
-  width: 55px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
   background-color: $secondaryColor;
   display: flex;
@@ -25,6 +25,8 @@
 /* Landscape phones and portrait tablets */
 @media (max-width: 767px) {
   .fab {
+    height: 55px;
+    width: 55px;
     bottom: $headerHeight + 30px;
     margin-left: 27%;
   }

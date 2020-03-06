@@ -9,6 +9,7 @@ import { siteName } from '../constants/config'
 import { FileAlt, Image, Video } from '../utils/icons'
 
 import Layout from '../components/Layout'
+import Item from '../components/editor/Item'
 
 const Editor = ({ me, setShowAuth }) => {
   const { t } = useLocalization('editor')
@@ -97,7 +98,48 @@ const Editor = ({ me, setShowAuth }) => {
         title: t('editor')
       }}
     >
-      Editor
+      <div className="input-group">
+        <label
+          htmlFor="title"
+          // className={errorClass(fields, 'title')}
+        >
+          <input
+            // className={errorClass(fields, 'title')}
+            type="text"
+            id="title"
+            placeholder={t('title')}
+            name="title"
+            onChange={e => setTitle(e.target.value)}
+            value={title}
+            onFocus={() => setError(null)}
+          />
+        </label>
+      </div>
+
+      <div className="body">
+        {items.map((item, index) => (
+          <Item
+            key={item.id}
+            item={item}
+            index={index}
+            length={items.length}
+            changeItem={changeItem}
+            moveItem={moveItem}
+            removeItem={removeItem}
+          />
+        ))}
+
+        <div className="add-box">
+          {addBoxItems.map(({ name, item, Icon }) => (
+            <div role="presentation" onClick={() => addItem(item)}>
+              <span>
+                <Icon />
+              </span>
+              <i>{name}</i>
+            </div>
+          ))}
+        </div>
+      </div>
     </Layout>
   )
 }

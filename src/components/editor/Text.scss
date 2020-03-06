@@ -1,0 +1,48 @@
+@import '../../constants/globals';
+
+.editor {
+  &-text {
+    margin-top: 2px;
+    // margin-bottom: $freeSpace;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .buttons {
+      display: flex;
+      list-style: none;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-bottom: -8px;
+      z-index: 1;
+      font-size: 10px;
+
+      li {
+        margin-right: 7px;
+        text-transform: uppercase;
+        cursor: pointer;
+        padding: 0px 3px;
+        transition: background-color 0.4s ease;
+        background-color: $whiteColor;
+        border: 1px solid lighten($primaryColor, 5);
+        border-radius: $borderRadius;
+
+        &:hover {
+          background-color: lighten($primaryColor, 25);
+        }
+      }
+    }
+
+    pre {
+      border: 1px solid lighten($primaryColor, 5);
+      border-radius: $borderRadius;
+      padding: 8px 10px;
+      font-size: 1em;
+      font-family: 'Roboto', 'Lucida Grande', 'Lucida Sans Unicode', Arial,
+        Helvetica, Verdana, sans-serif;
+      min-height: 100px;
+      white-space: pre-wrap; /* Since CSS 2.1 */
+      word-wrap: break-word;
+    }
+  }
+}
