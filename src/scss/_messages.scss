@@ -1,0 +1,12 @@
+.message {
+  &-error {
+    background-color: lighten($secondaryColor, 48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $secondaryColor;
+    border-radius: $borderRadius;
+    color: $secondaryColor;
+    padding: $freeSpace;
+  }
+}

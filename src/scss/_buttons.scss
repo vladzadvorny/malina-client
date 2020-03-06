@@ -1,0 +1,51 @@
+@import '../constants/globals';
+
+button {
+  color: $primaryColor;
+  font-size: 1.2em;
+  height: 34px;
+  padding: 0 $freeSpace;
+  cursor: pointer;
+  border-radius: $borderRadius;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $primaryColor;
+
+  background-color: $primaryColor;
+  background: linear-gradient(lighten($primaryColor, 10), $primaryColor);
+  color: $whiteColor;
+  border: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:active {
+  }
+
+  &.inverse {
+    background-color: $whiteColor;
+    background: linear-gradient(lighten($blackColor, 77), $whiteColor);
+    color: $primaryColor;
+    border: 1px solid $primaryColor;
+  }
+
+  &.secondary {
+    background-color: $secondaryColor;
+    background: linear-gradient(lighten($secondaryColor, 10), $secondaryColor);
+
+    &:hover {
+      background: linear-gradient(
+        lighten($secondaryColor, 15),
+        $secondaryColor
+      );
+    }
+    &:active {
+      background: linear-gradient(
+        $secondaryColor,
+        lighten($secondaryColor, 10)
+      );
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { h, render } from 'preact'
 import { Provider } from 'unistore/preact'
 
 import createStore from './store'
+import { LocalizationProvider } from './utils/localization'
 
 import App from './App'
 
@@ -17,7 +18,9 @@ setTimeout(() => {
 
 render(
   <Provider store={store}>
-    <App />
+    <LocalizationProvider>
+      <App />
+    </LocalizationProvider>
   </Provider>,
   document.body
 )

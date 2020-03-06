@@ -7,6 +7,7 @@ import { Provider } from 'unistore/preact'
 import { assetsByChunkName } from '../dist-ssr/public/stats.json'
 import createStore from './store'
 import { port } from './constants/config'
+import { LocalizationProvider } from './utils/localization'
 
 import App from './App'
 
@@ -36,7 +37,9 @@ app.listen({ port }, () => {
 function renderer(route, state = {}) {
   const rendered = render(
     <Provider store={createStore(state)}>
-      <App route={route} />
+      <LocalizationProvider>
+        <App route={route} />
+      </LocalizationProvider>
     </Provider>
   )
 

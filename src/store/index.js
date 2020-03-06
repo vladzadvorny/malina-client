@@ -11,6 +11,12 @@ export const connect = mapStateToProps => WrappedComponent => {
 export default (state = {}) => {
   const initialState = {
     count: 0,
+    app: {
+      loading: true,
+      token:
+        typeof window !== 'undefined' ? localStorage.getItem('@token') : null,
+      showAuth: false
+    },
     me: {}
   }
 
