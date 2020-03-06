@@ -25,6 +25,35 @@
       display: flex;
       align-items: center;
 
+      .back {
+        border-radius: 50%;
+        height: 34px;
+        width: 34px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        background-color: $primaryColor;
+        transition: background-color 0.4s ease;
+        margin-left: -5px;
+
+        svg {
+          color: $whiteColor;
+          font-size: 19px;
+        }
+
+        &.active,
+        &:active {
+          background-color: darken($primaryColor, 10);
+        }
+
+        @media not all and (pointer: coarse) {
+          &:hover {
+            background-color: darken($primaryColor, 10);
+          }
+        }
+      }
+
       .title {
         margin: 0;
         font-size: 1.3em;
@@ -37,6 +66,37 @@
     .right {
       display: flex;
       justify-content: flex-end;
+      align-items: center;
+
+      .me {
+        color: $blackColor;
+        background-color: $whiteColor;
+        padding: 0 9px 0 5px;
+        height: 24px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 14px;
+        cursor: pointer;
+
+        svg {
+          color: $secondaryColor;
+          font-size: 13px;
+          margin-right: 4px;
+          margin-top: -3px;
+        }
+
+        span {
+          font-size: 0.8em;
+          font-weight: bold;
+          color: lighten($blackColor, 25);
+        }
+
+        &.active,
+        &:hover {
+          background-color: darken($whiteColor, 3);
+        }
+      }
     }
   }
 }
