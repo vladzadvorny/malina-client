@@ -1,0 +1,37 @@
+@import '../../constants/globals';
+
+.editor {
+  &-video {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    margin-top: $freeSpace;
+
+    // margin-bottom: 5px;
+
+    .input-group {
+      // width: 400px;
+      border: 1px dotted $primaryColor;
+      background-color: lighten($primaryColor, 43);
+      min-height: 100px;
+      width: 100%;
+      border-radius: $borderRadius;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 0;
+
+      label {
+        width: 50%;
+      }
+    }
+
+    .message-error {
+      margin-bottom: 0;
+    }
+
+    iframe {
+      max-width: 100%;
+    }
+  }
+}

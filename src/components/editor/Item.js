@@ -5,6 +5,7 @@ import { Times, ChevronUp, ChevronDown } from '../../utils/icons'
 
 import Text from './Text'
 import Image from './Image'
+import Video from './Video'
 
 const Item = ({ index, length, removeItem, item, changeItem, moveItem }) => {
   return (
@@ -30,6 +31,18 @@ const Item = ({ index, length, removeItem, item, changeItem, moveItem }) => {
               changeItem({
                 ...item,
                 body: image
+              })
+            }
+          />
+        )}
+
+        {item.type === 'video' && (
+          <Video
+            item={item}
+            setVideo={video =>
+              changeItem({
+                ...item,
+                body: video
               })
             }
           />
