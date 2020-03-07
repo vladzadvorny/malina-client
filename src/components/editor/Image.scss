@@ -1,0 +1,71 @@
+@import '../../constants/globals';
+
+.editor {
+  &-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    margin-top: $freeSpace;
+    // margin-bottom: 5px;
+    position: relative;
+    // justify-content: center;
+    flex-direction: column;
+
+    .dropzone {
+      outline: none;
+      border: 1px dashed $primaryColor;
+      background-color: lighten($primaryColor, 43);
+      padding: $freeSpace;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: $borderRadius;
+      cursor: pointer;
+      // width: 300px;
+      // height: 90px;
+      // margin-right: -40px;
+      position: relative;
+      min-height: 100px;
+      width: 100%;
+
+      // span {
+      //   text-align: center;
+      // }
+
+      &:hover {
+        background-color: lighten($primaryColor, 40);
+      }
+
+      div {
+        text-align: center;
+      }
+
+      .error-message {
+        position: absolute;
+        color: $secondaryColor;
+        background-color: lighten($secondaryColor, 48);
+        z-index: 777;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: $freeSpace;
+        text-align: center;
+      }
+    }
+
+    img {
+      // width: 100%;
+      max-width: 50%;
+      height: auto;
+      margin-bottom: $freeSpace;
+    }
+
+    .message-error {
+      margin-bottom: 0;
+    }
+  }
+}

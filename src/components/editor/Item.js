@@ -4,6 +4,7 @@ import './Item.scss'
 import { Times, ChevronUp, ChevronDown } from '../../utils/icons'
 
 import Text from './Text'
+import Image from './Image'
 
 const Item = ({ index, length, removeItem, item, changeItem, moveItem }) => {
   return (
@@ -19,6 +20,18 @@ const Item = ({ index, length, removeItem, item, changeItem, moveItem }) => {
               })
             }}
             onBlur={console.log}
+          />
+        )}
+
+        {item.type === 'image' && (
+          <Image
+            item={item}
+            setImage={image =>
+              changeItem({
+                ...item,
+                body: image
+              })
+            }
           />
         )}
       </div>

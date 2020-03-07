@@ -12,6 +12,7 @@
     "serve": "serve ./dist-cordova"
   },
   "dependencies": {
+    "attr-accept": "^2.0.0",
     "browser-locale": "^1.0.3",
     "express": "^4.17.1",
     "history": "^4.10.1",

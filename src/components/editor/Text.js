@@ -2,7 +2,7 @@ import { h } from 'preact'
 
 import './Text.scss'
 
-import ContentEditable from '../../utils/contentEditable'
+import ContentEditable from '../../vendors/ContentEditable'
 
 const Text = ({ html, setHtml, onBlur }) => {
   // const [_html, _setHtml] = useState('');
