@@ -1,0 +1,46 @@
+@import '../../constants/globals';
+
+.editor {
+  &-tags {
+    border: 1px solid red;
+    display: flex;
+    padding: $freeSpace;
+
+    .input {
+      position: relative;
+      width: 180px;
+
+      input[type='text'] {
+        border: 1px solid $primaryColor;
+        border-radius: $borderRadius;
+        // background-color: lightblue;
+        height: 30px;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        background-color: $whiteColor;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 30px;
+        z-index: 777;
+        border-left: 1px solid $primaryColor;
+        border-right: 1px solid $primaryColor;
+
+        li {
+          padding: 3px $freeSpace;
+          border-bottom: 1px solid $primaryColor;
+          cursor: pointer;
+          background-color: lighten($primaryColor, 43);
+
+          &:hover {
+            background-color: lighten($primaryColor, 40);
+          }
+        }
+      }
+    }
+  }
+}

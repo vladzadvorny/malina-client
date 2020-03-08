@@ -10,11 +10,13 @@ import { FileAlt, Image, Video } from '../utils/icons'
 
 import Layout from '../components/Layout'
 import Item from '../components/editor/Item'
+import Tags from '../components/editor/Tags'
 
 const Editor = ({ me, setShowAuth }) => {
   const { t } = useLocalization('editor')
   const [title, setTitle] = useState('')
   const [items, setItems] = useState([])
+  const [tags, setTags] = useState([])
   const [error, setError] = useState(null)
   // error
   const message = error !== null ? error.message : ''
@@ -139,6 +141,8 @@ const Editor = ({ me, setShowAuth }) => {
             </div>
           ))}
         </div>
+
+        <Tags tags={tags} setTags={setTags} />
       </div>
     </Layout>
   )
