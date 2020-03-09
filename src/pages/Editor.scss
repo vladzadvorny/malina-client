@@ -3,7 +3,8 @@
 .editor {
   background-color: $whiteColor;
   padding: $freeSpace;
-  margin-bottom: $footerHeight;
+  padding-bottom: 0;
+  // margin-bottom: $footerHeight;
 
   .input-group {
     margin-bottom: $freeSpace;
@@ -15,7 +16,7 @@
     // margin-bottom: $freeSpace;
     display: flex;
     flex-direction: column;
-    // padding: $freeSpace;
+    margin-bottom: $freeSpace * 1.5;
 
     .add-box {
       padding-top: $freeSpace;
@@ -57,5 +58,9 @@
         }
       }
     }
+  }
+
+  .footer-block {
+    justify-content: space-between !important;
   }
 }

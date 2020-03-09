@@ -5,7 +5,7 @@ import './Layout.scss'
 import Header from './Header'
 import Footer from './Footer'
 
-const Layout = ({ classContainer, children, headerInfo }) => {
+const Layout = ({ classContainer, children, headerInfo, hideFooter }) => {
   return (
     <>
       <Header headerInfo={headerInfo} />
@@ -16,7 +16,7 @@ const Layout = ({ classContainer, children, headerInfo }) => {
           {children}
         </div>
       </div>
-      <Footer />
+      {!hideFooter && <Footer />}
     </>
   )
 }

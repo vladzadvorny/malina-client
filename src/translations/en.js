@@ -7,6 +7,14 @@ export default {
   },
   editor: {
     editor: 'Post editor',
-    dropzone: 'Try dropping image here, or click to select file to upload'
+    dropzone: 'Try dropping image here, or click to select file to upload',
+    title: 'Post title',
+    text: 'Text',
+    image: 'Image',
+    video: 'Video',
+    tag: 'Tag',
+    clear: 'Clear',
+    saveAsDraft: 'Save as draft',
+    publish: 'Publish'
   }
 }

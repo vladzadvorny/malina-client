@@ -64,7 +64,7 @@ const Editor = ({ me, setShowAuth }) => {
 
   const addBoxItems = [
     {
-      name: 'Text',
+      name: t('text'),
       Icon: FileAlt,
       item: {
         id: getId(),
@@ -73,7 +73,7 @@ const Editor = ({ me, setShowAuth }) => {
       }
     },
     {
-      name: 'Image',
+      name: t('image'),
       Icon: Image,
       item: {
         id: getId(),
@@ -82,7 +82,7 @@ const Editor = ({ me, setShowAuth }) => {
       }
     },
     {
-      name: 'Video',
+      name: t('video'),
       Icon: Video,
       item: {
         id: getId(),
@@ -99,50 +99,63 @@ const Editor = ({ me, setShowAuth }) => {
         button: 'back',
         title: t('editor')
       }}
+      hideFooter
     >
-      <div className="input-group">
-        <label
-          htmlFor="title"
-          // className={errorClass(fields, 'title')}
-        >
-          <input
+      <div className="main-block">
+        <div className="input-group">
+          <label
+            htmlFor="title"
             // className={errorClass(fields, 'title')}
-            type="text"
-            id="title"
-            placeholder={t('title')}
-            name="title"
-            onChange={e => setTitle(e.target.value)}
-            value={title}
-            onFocus={() => setError(null)}
-          />
-        </label>
-      </div>
+          >
+            <input
+              // className={errorClass(fields, 'title')}
+              type="text"
+              id="title"
+              placeholder={t('title')}
+              name="title"
+              onChange={e => setTitle(e.target.value)}
+              value={title}
+              onFocus={() => setError(null)}
+            />
+          </label>
+        </div>
 
-      <div className="body">
-        {items.map((item, index) => (
-          <Item
-            key={item.id}
-            item={item}
-            index={index}
-            length={items.length}
-            changeItem={changeItem}
-            moveItem={moveItem}
-            removeItem={removeItem}
-          />
-        ))}
-
-        <div className="add-box">
-          {addBoxItems.map(({ name, item, Icon }) => (
-            <div role="presentation" onClick={() => addItem(item)}>
-              <span>
-                <Icon />
-              </span>
-              <i>{name}</i>
-            </div>
+        <div className="body">
+          {items.map((item, index) => (
+            <Item
+              key={item.id}
+              item={item}
+              index={index}
+              length={items.length}
+              changeItem={changeItem}
+              moveItem={moveItem}
+              removeItem={removeItem}
+            />
           ))}
+
+          <div className="add-box">
+            {addBoxItems.map(({ name, item, Icon }) => (
+              <div role="presentation" onClick={() => addItem(item)}>
+                <span>
+                  <Icon />
+                </span>
+                <i>{name}</i>
+              </div>
+            ))}
+          </div>
         </div>
 
         <Tags tags={tags} setTags={setTags} />
+      </div>
+
+      <div className="footer-block">
+        <button type="button" className="secondary">
+          {t('clear')}
+        </button>
+        <button type="button" className="inverse">
+          {t('saveAsDraft')}
+        </button>
+        <button type="button">{t('publish')}</button>
       </div>
     </Layout>
   )

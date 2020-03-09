@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { h } from 'preact'
 import { useState, useEffect } from 'preact/hooks'
 import debounce from 'lodash.debounce'
@@ -5,8 +6,10 @@ import debounce from 'lodash.debounce'
 import './Tags.scss'
 import { uri } from '../../constants/config'
 import { connect } from '../../store'
+import { useLocalization } from '../../utils/localization'
 
 const Tags = ({ tags, setTags, app: { token } }) => {
+  const { t } = useLocalization('editor')
   const [tag, setTag] = useState('')
   const [suggestions, setSuggestions] = useState([])
 
@@ -17,6 +20,12 @@ const Tags = ({ tags, setTags, app: { token } }) => {
       setSuggestions([])
     }
   }, [tag])
+
+  const addTag = tag => {
+    setTag('')
+    setSuggestions([])
+    setTags([...tags, tag])
+  }
 
   const fetchTags = debounce(async () => {
     try {
@@ -34,19 +43,44 @@ const Tags = ({ tags, setTags, app: { token } }) => {
   }, 500)
 
   return (
-    <div className="editor-tags">
+    <ul className="editor-tags">
+      {/* eslint-disable-next-line no-shadow */}
+      {tags.map(tag => (
+        <li className="tag" key={tag}>
+          {tag}
+        </li>
+      ))}
+
       <div className="input">
-        <input type="text" value={tag} onInput={e => setTag(e.target.value)} />
+        <input
+          type="text"
+          value={tag}
+          onInput={({ target: { value } }) => {
+            if (value.substr(value.length - 1) === ',') {
+              addTag(tag)
+              return
+            }
+            setTag(value)
+          }}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              addTag(tag)
+            }
+          }}
+          placeholder={t('tag')}
+        />
 
         {!!suggestions.length && (
           <ul>
             {suggestions.map(({ id, name }) => (
-              <li key={id}>{name}</li>
+              <li key={id} role="presentation" onClick={() => addTag(name)}>
+                {name}
+              </li>
             ))}
           </ul>
         )}
       </div>
-    </div>
+    </ul>
   )
 }
 
