@@ -7,6 +7,7 @@ import './Tags.scss'
 import { uri } from '../../constants/config'
 import { connect } from '../../store'
 import { useLocalization } from '../../utils/localization'
+import { Times } from '../../utils/icons'
 
 const Tags = ({ tags, setTags, app: { token } }) => {
   const { t } = useLocalization('editor')
@@ -21,11 +22,15 @@ const Tags = ({ tags, setTags, app: { token } }) => {
     }
   }, [tag])
 
+  // eslint-disable-next-line no-shadow
   const addTag = tag => {
     setTag('')
     setSuggestions([])
-    setTags([...tags, tag])
+    setTags([...tags.filter(item => tag !== item), tag])
   }
+
+  // eslint-disable-next-line no-shadow
+  const removeTag = tag => setTags(tags.filter(item => tag !== item))
 
   const fetchTags = debounce(async () => {
     try {
@@ -48,6 +53,13 @@ const Tags = ({ tags, setTags, app: { token } }) => {
       {tags.map(tag => (
         <li className="tag" key={tag}>
           {tag}
+          <span
+            className="remove"
+            role="presentation"
+            onClick={() => removeTag(tag)}
+          >
+            <Times />
+          </span>
         </li>
       ))}
 
@@ -56,11 +68,12 @@ const Tags = ({ tags, setTags, app: { token } }) => {
           type="text"
           value={tag}
           onInput={({ target: { value } }) => {
-            if (value.substr(value.length - 1) === ',') {
+            if (value.substr(value.length - 1) === ',' && tag) {
               addTag(tag)
               return
             }
-            setTag(value)
+
+            setTag(value.replace(/[^a-zA-Zа-яА-ЯЁё]/g, ''))
           }}
           onKeyDown={e => {
             if (e.key === 'Enter') {

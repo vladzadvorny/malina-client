@@ -25,6 +25,17 @@
       color: lighten($blackColor, 58);
       border-radius: $borderRadius;
       margin-bottom: 5px;
+
+      .remove {
+        height: 15px;
+        width: 15px;
+        margin-left: 4px;
+        cursor: pointer;
+        svg {
+          color: lighten($secondaryColor, 5);
+          font-size: 0.8;
+        }
+      }
     }
   }
 
