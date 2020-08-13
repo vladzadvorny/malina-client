@@ -22,7 +22,7 @@
     "preact": "^10.3.3",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
-    "serialize-javascript": "^3.0.0",
+    "serialize-javascript": "^3.1.0",
     "unistore": "^3.5.1"
   },
   "devDependencies": {
