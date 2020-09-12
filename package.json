@@ -18,7 +18,7 @@
     "history": "^4.10.1",
     "js-video-url-parser": "^0.4.0",
     "lodash.debounce": "^4.0.8",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "preact": "^10.3.3",
     "preact-render-to-string": "^5.1.4",
     "preact-router": "^3.2.1",
