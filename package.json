@@ -14,7 +14,7 @@
   "dependencies": {
     "attr-accept": "^2.0.0",
     "browser-locale": "^1.0.3",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "history": "^4.10.1",
     "js-video-url-parser": "^0.4.0",
     "lodash.debounce": "^4.0.8",
